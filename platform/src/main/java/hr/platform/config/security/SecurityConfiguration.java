@@ -36,18 +36,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 // allow access to static resources to anyone
                         requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
                 antMatchers("/", "/home").permitAll().
-
-
-
-
-                antMatchers("/admin/**","/doctor/*/delete").hasRole("ADMIN").
-//    /departments/department/*  permitAll(). трябва да е за всички а не работи  /doctors/doctor/* е същото но работи..
-
-                //трябва да е позволено само за логнат Doctor
-// http://localhost:8080/doctors/doctor/1/reviews -
-                //http://localhost:8080/doctors/doctor/1/examinations
-
-
                         and().
                 // configure login with HTML form
                         formLogin().
